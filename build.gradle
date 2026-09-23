@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+java { toolchain { languageVersion = JavaLanguageVersion.of(25) } }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.lavalink.dev/releases' }
+}
+
+dependencies {
+    compileOnly 'dev.arbjerg.lavalink:plugin-api:4.1.2'
+}
